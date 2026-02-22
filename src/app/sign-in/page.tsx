@@ -15,7 +15,11 @@ const SignUpPage = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    console.log({ username, email, password })
+
+    if(!username || !email || !password) {
+      alert('Please fill in all fields')
+      return
+    }
   }
 
   return (
@@ -77,7 +81,6 @@ const SignUpPage = () => {
                       </button>
                     </div>
                   </div>
-
                   <Button type='submit' className='w-full mt-4'>
                     Sign In
                   </Button>
